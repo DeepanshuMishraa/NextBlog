@@ -58,7 +58,7 @@ export function RegisterForm() {
     <div  className="flex items-center justify-center h-screen">
       <Card className="w-full max-w-sm">
         <CardHeader className="text-center space-y-2">
-          <CardTitle className="text-2xl font-bold">Login</CardTitle>
+          <CardTitle className="text-2xl font-bold">Register</CardTitle>
           <CardDescription>Enter your details below to register an account.</CardDescription>
           {loading && <h1 className="text-blue-700">Registering your account....</h1>}
         </CardHeader>

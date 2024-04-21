@@ -68,7 +68,7 @@ export function About() {
               <UsersIcon className="h-5 w-5 text-gray-900 dark:text-gray-50" />
               <h3 className="text-lg font-medium">Community Focused</h3>
               <p className="text-gray-500 dark:text-gray-400">
-                John values his readers and is dedicated to fostering a supportive and engaged community around his
+                Deepanshu values his readers and is dedicated to fostering a supportive and engaged community around his
                 blog.
               </p>
             </div>
@@ -76,7 +76,7 @@ export function About() {
               <LightbulbIcon className="h-5 w-5 text-gray-900 dark:text-gray-50" />
               <h3 className="text-lg font-medium">Innovative Thinker</h3>
               <p className="text-gray-500 dark:text-gray-400">
-                John is always looking for new and creative ways to present information and engage his audience.
+                Deepanshu is always looking for new and creative ways to present information and engage his audience.
               </p>
             </div>
           </div>
