@@ -43,7 +43,7 @@ export function About() {
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">About the Creator</h1>
             <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
               Deepanshu is the creator of this site, dedicated to sharing his knowledge and insights on a variety of topics.
-              With a passion for writing and a deep understanding of his subject matter, John strives to provide his
+              With a passion for writing and a deep understanding of his subject matter, Deepanshu strives to provide his
               readers with engaging and informative content.
             </p>
           </div>
