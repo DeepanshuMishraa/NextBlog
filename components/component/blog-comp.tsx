@@ -30,10 +30,10 @@ export function BlogComp() {
 
   return (
     <main className="container mx-auto px-4 py-8 md:px-6 lg:py-12">
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 ">
         {blogData && blogData.length > 0 ? ( // Check if blogData is not null and has a length greater than 0
           blogData.map((blog: Blog) => (
-            <article key={blog.id} className="rounded-lg overflow-hidden shadow-lg">
+            <article key={blog.id} className="rounded-lg hover:scale-110 duration-200 overflow-hidden max-lg:hover:scale-105 shadow-lg">
               <img
                 alt="Blog post image"
                 className="w-full h-48 object-cover"

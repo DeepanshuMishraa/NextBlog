@@ -28,6 +28,7 @@ import { Trophy } from "lucide-react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import connectDB from "@/utils/db";
+import {signIn} from "next-auth/react";
 
 export function LoginForm() {
 
@@ -39,20 +40,38 @@ export function LoginForm() {
   const router = useRouter();
 
 
-  const handleLogin = async()=>{
+  const handleLogin = async(e:any)=>{
+    e.preventDefault();
     try{
       setLoading(true);
-      const res = await axios.post('/api/user/signin',{email,password}); 
-      console.log(res.data);
-      router.push("/")
+      if(!email || !password){
+        setError('Please fill all the fields');
+        return;
+      }
+      const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      if(!emailRegex.test(email)){
+        setError('Please enter a valid email');
+        return;
+      }
 
-    }catch(e:any){
-      setError(e.message);
-      console.log(e)
+      const res = await signIn('credentials',{
+        email,password,redirect:false
+      })
+
+      if(res?.error){
+        setError(res.error);
+        return;
+      }
+
+      router.push("/dashboard")
+      
+    }catch(err){
+      console.log(err);
     }finally{
       setLoading(false);
     }
   }
+
   return (
     <div  className="flex items-center justify-center h-screen">
       <Card className="w-full max-w-sm">
@@ -73,6 +92,9 @@ export function LoginForm() {
         </CardContent>
         <CardFooter className="flex justify-center">
           <Button className="w-full" onClick={handleLogin}>Login</Button>
+          <Button onClick={()=>signIn("google")}  className="w-full" variant="outline">
+            Login with Google
+          </Button>
 
           {error && <p className="text-red-500">{error}</p>}
         </CardFooter>
